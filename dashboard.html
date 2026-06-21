@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <h2 id="welcomeMsg">Welcome!</h2>
+    <p>You are logged in as administrator.</p>
+    <p id="searchResult"></p>
+    <a href="index.html" onclick="logout()">Logout</a>
+</div>
+
+<script>
+    // Checks for a "loggedIn" cookie set by login.html.
+    // Anyone can set this cookie manually from the browser console
+    // (e.g. document.cookie = "loggedIn=true") to bypass login entirely.
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    if (getCookie("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+
+    // Reflects a URL parameter directly into the page without sanitization
+    var params = new URLSearchParams(window.location.search);
+    var searchTerm = params.get("q");
+    if (searchTerm) {
+        document.getElementById("searchResult").innerHTML = "Search results for: " + searchTerm;
+    }
+
+    function logout() {
+        document.cookie = "loggedIn=false";
+    }
+</script>
+
+</body>
+</html>
