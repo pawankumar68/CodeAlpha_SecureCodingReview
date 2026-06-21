@@ -14,6 +14,14 @@ The goal of this task was to practice identifying common, real-world security mi
 - Google Chrome DevTools (Console, Elements) — used to test and confirm each vulnerability
 - Microsoft Word (review report)
 
+## 🔗 Live Demo
+
+Try the vulnerable login page yourself: [Live Demo](https://pawankumar68.github.io/CodeAlpha_SecureCodingReview/)
+
+**Credentials:** username `admin`, password `admin123`
+
+⚠️ This is intentionally insecure — feel free to try bypassing the login using browser DevTools (see the review report for how).
+
 ## 📂 Contents
 
 - `index.html` — the sample admin login page
